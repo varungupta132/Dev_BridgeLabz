@@ -4,7 +4,7 @@ from operations.multiplication import multiply
 from operations.division import divide
 
 def main():
-    print("📱 Calculator App")
+    print("=== Calculator App ===")
     print("Choose operation:")
     print("1. Addition")
     print("2. Subtraction")
@@ -27,9 +27,9 @@ def main():
             if b != 0:
                 print("Result:", divide(a, b))
             else:
-                print("⚠️ Error: Cannot divide by zero.")
+                print("Error: Cannot divide by zero.")
     else:
-        print("❌ Invalid input")
+        print("Invalid input. Please enter 1, 2, 3, or 4.")
 
 if __name__ == "__main__":
     main()
