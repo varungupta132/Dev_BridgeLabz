@@ -14,8 +14,12 @@ def main():
     choice = input("Enter choice (1/2/3/4): ")
 
     if choice in ['1', '2', '3', '4']:
-        a = float(input("Enter first number: "))
-        b = float(input("Enter second number: "))
+        try:
+            a = float(input("Enter first number: "))
+            b = float(input("Enter second number: "))
+        except ValueError:
+            print("❌ Please enter valid numeric input.")
+            return
 
         if choice == '1':
             print("Result:", add(a, b))
