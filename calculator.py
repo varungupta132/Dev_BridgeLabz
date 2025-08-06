@@ -1,39 +1,41 @@
-from operations.addition import add
-from operations.subtraction import subtract
-from operations.multiplication import multiply
-from operations.division import divide
+def add(x, y):
+    return x + y
 
-def main():
-    print("=== Calculator App ===")
-    print("Choose operation:")
-    print("1. Addition")
-    print("2. Subtraction")
-    print("3. Multiplication")
-    print("4. Division")
+def subtract(x, y):
+    return x - y
 
-    choice = input("Enter choice (1/2/3/4): ")
+def multiply(x, y):
+    return x * y
 
-    if choice in ['1', '2', '3', '4']:
-        try:
-            a = float(input("Enter first number: "))
-            b = float(input("Enter second number: "))
-        except ValueError:
-            print("❌ Please enter valid numeric input.")
-            return
-
-        if choice == '1':
-            print("Result:", add(a, b))
-        elif choice == '2':
-            print("Result:", subtract(a, b))
-        elif choice == '3':
-            print("Result:", multiply(a, b))
-        elif choice == '4':
-            if b != 0:
-                print("Result:", divide(a, b))
-            else:
-                print("Error: Cannot divide by zero.")
+def divide(x, y):
+    if y != 0:
+        return x / y
     else:
-        print("Invalid input. Please enter 1, 2, 3, or 4.")
+        return "Cannot divide by zero"
 
-if __name__ == "__main__":
-    main()
+print("=== Calculator App ===")
+print("Choose operation:")
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Division")
+
+choice = input("Enter choice (1/2/3/4): ")
+
+if choice in ['1', '2', '3', '4']:
+    try:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+        
+        if choice == '1':
+            print("Result:", add(num1, num2))
+        elif choice == '2':
+            print("Result:", subtract(num1, num2))
+        elif choice == '3':
+            print("Result:", multiply(num1, num2))
+        elif choice == '4':
+            print("Result:", divide(num1, num2))
+    except ValueError:
+        print("Invalid input. Please enter numeric values.")
+else:
+    print("Invalid choice. Please select from 1 to 4.")
